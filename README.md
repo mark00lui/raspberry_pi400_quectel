@@ -20,7 +20,12 @@ repo sync --no-tags
 sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 libncurses5 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils xsltproc unzip fontconfig
 ```
 
-5. Build AOSP
+5.1 Integrate Quectel Ril
+```
+https://github.com/mark00lui/raspberry_pi400_quectel/wiki/RIL-for-Quectel
+```
+
+5.2. Build AOSP
 ```
 source build/envsetup.sh
 lunch rpi400-eng
@@ -35,4 +40,9 @@ git clone https://github.com/mark00lui/kernel_arpi.git
 7. Build kernel
 ```
 build/build.sh
+```
+
+8. mkimg
+```
+
 ```
