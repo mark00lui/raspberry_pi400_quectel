@@ -97,3 +97,8 @@ KDIR="rpi_kernel/out/arpi-5.15/dist"
 	) | fdisk $IMGNAME
 
 ```
+
+8.3 build img
+```
+sudo ./mkimg.sh
+```
