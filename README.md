@@ -102,3 +102,10 @@ KDIR="rpi_kernel/out/arpi-5.15/dist"
 ```
 sudo ./mkimg.sh
 ```
+
+Todo to set raw ip automatically
+```
+ip link set dev wwan0 down
+echo Y > /sys/class/net/wwan0/qmi/raw_ip
+ip link set dev wwan0 up
+```
