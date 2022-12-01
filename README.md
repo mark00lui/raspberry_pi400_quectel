@@ -42,7 +42,58 @@ git clone https://github.com/mark00lui/kernel_arpi.git
 build/build.sh
 ```
 
-8. mkimg
+8.1. download mkimg
 ```
+wget https://raw.githubusercontent.com/mark00lui/raspberry_pi400_quectel/arpi-13/mkimg.sh -O mkimg.sh
+```
+
+8.2 modify img path
+```
+# what file name prefix you want
+LINEAGEVERSION=rpi13
+DATE=`date +%Y%m%d`
+IMGNAME=$LINEAGEVERSION-$DATE-rpi4.img
+
+# img size
+IMGSIZE=8
+
+# you must modify the path
+# i place mkimg.sh at the root , rpi = AOSP , rpi_kernel = kernel
+DEVICE="rpi/device/arpi/rpi4"
+OUTDIR="rpi/out/target/product/rpi4"
+KDIR="rpi_kernel/out/arpi-5.15/dist"
+
+# boot = 128M
+# system = 2048M
+# vendor = 256M
+	echo "Creating partitions..."
+	(
+	echo o
+	echo n
+	echo p
+	echo 1
+	echo
+	echo +128M
+	echo n
+	echo p
+	echo 2
+	echo
+	echo +2048M
+	echo n
+	echo p
+	echo 3
+	echo
+	echo +256M
+	echo n
+	echo p
+	echo
+	echo
+	echo t
+	echo 1
+	echo c
+	echo a
+	echo 1
+	echo w
+	) | fdisk $IMGNAME
 
 ```
