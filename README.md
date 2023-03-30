@@ -22,7 +22,7 @@ sudo apt-get install git-core gnupg flex bison build-essential zip curl zlib1g-d
 
 1.5 Integrate Quectel Ril
 ```
-https://github.com/mark00lui/raspberry_pi400_quectel/wiki/RIL-for-Quectel
+https://github.com/mark00lui/raspberry_pi400_quectel/wiki/Quectel-RIL
 ```
 
 1.6 Build AOSP
